@@ -1,0 +1,40 @@
+
+<div class="container">
+  <ng-template #errors>
+    {{errorMessage}}
+  </ng-template>
+ <div class="card p-2" *ngIf="products; else errors">
+   <div class="card-header"><h4>Products List</h4></div>
+   <div class="card-body">
+     <table class="table table-hover ">
+       <thead>
+       <tr class="order-bottom border-danger">
+         <th scope="col">ID</th>
+         <th scope="col">Name</th>
+         <th scope="col">Price</th>
+         <th scope="col">Edit</th>
+         <th class="">Delete</th>
+       </tr>
+       </thead>
+       <tbody>
+       <tr *ngFor="let p of products">
+         <td>{{p.id}}</td>
+         <td>{{p.name}}</td>
+         <td>{{p.price}}</td>
+         <td>
+           <button (click)="handleDeleteProduct(p)" class="btn btn-success">
+             <i class="bi bi-pencil-square"></i>
+           </button>
+         </td>
+         <td>
+           <button (click)="handleDeleteProduct(p)" class="btn btn-danger ">
+             <i class="bi bi-trash"></i>
+           </button>
+         </td>
+
+       </tr>
+       </tbody>
+     </table>
+   </div>
+ </div>
+</div>
