@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {CustomersService} from "../../services/customers.service";
+import {Observable} from "rxjs";
+import {Customer} from "../../models/customer.model";
+import {ActivatedRoute, Router} from "@angular/router";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-customers',
@@ -7,9 +13,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor() { }
+  customers!: any;
+  errorMessage!: String;
 
-  ngOnInit(): void {
+  constructor(private customerService: CustomersService) {
   }
 
+  ngOnInit(): void {
+    this.getCustomers();
+  }
+
+  getCustomers() {
+    this.customers = this.customerService.onGetCustomers().subscribe({
+      next:(data)=>{
+        this.customers=data;
+      },
+      error:(err)=>{
+        this.errorMessage=err;
+      }
+    });;
+  }
+
+
+   getBills(c: any) {
+    this.customerService.onGetBills(c);
+  }
+
+  getAccountDetails(c: any) {
+    this.customerService.onGetAccountDetails(c);
+  }
+
+
 }
+
+
+
+

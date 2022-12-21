@@ -12,26 +12,15 @@
          <th scope="col">ID</th>
          <th scope="col">Name</th>
          <th scope="col">Price</th>
-         <th scope="col">Edit</th>
-         <th class="">Delete</th>
+         <th scope="col">Quantity</th>
        </tr>
        </thead>
        <tbody>
-       <tr *ngFor="let p of products">
+       <tr *ngFor="let p of products._embedded.products">
          <td>{{p.id}}</td>
          <td>{{p.name}}</td>
          <td>{{p.price}}</td>
-         <td>
-           <button (click)="handleDeleteProduct(p)" class="btn btn-success">
-             <i class="bi bi-pencil-square"></i>
-           </button>
-         </td>
-         <td>
-           <button (click)="handleDeleteProduct(p)" class="btn btn-danger ">
-             <i class="bi bi-trash"></i>
-           </button>
-         </td>
-
+         <td>{{p.quantity}}</td>
        </tr>
        </tbody>
      </table>

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from "../../services/product.service";
+import {HttpClient} from "@angular/common/http";
+import {Product} from "../../models/product.model";
+import {ProductsService} from "../../services/products.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-products',
@@ -8,27 +11,26 @@ import {ProductService} from "../../services/product.service";
 })
 export class ProductsComponent implements OnInit {
 
-  products! : Array<any>;
+  products!: any
   errorMessage!: String;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productService.getAllProducts().subscribe(
+    this.listProducts();
+
+  }
+  listProducts(){
+    this.productService.getProducts().subscribe({
+      next: (data)=> {
+        this.products=data;
+      },
+      error:(err)=>
       {
-        next :(data)=>{
-          this.products=data;
-        },
-        error:(err)=>{
-          this.errorMessage=err;
-        }
+        console.log(err);
       }
-    );
+    });
+    console.log(this.products)
   }
 
-  handleDeleteProduct(p: any) {
-    let index=this.products.indexOf(p);
-    this.products.splice(index,1);
-
-  }
 }
