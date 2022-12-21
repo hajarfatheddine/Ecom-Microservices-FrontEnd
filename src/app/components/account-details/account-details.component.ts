@@ -16,6 +16,7 @@ export class AccountDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.getDetails();
   }
   getDetails(){
@@ -24,7 +25,7 @@ export class AccountDetailsComponent implements OnInit {
       error:(err)=>{
         console.log(err);
       }
-    });
+    })
   }
 
   previous() {
