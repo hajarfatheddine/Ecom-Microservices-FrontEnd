@@ -1,28 +1,25 @@
-# EcomMicroservicesFrontEnd
+# Ecommerce application FrontEnd
+## Products
+In this section, the user can view the list of products that exist:
+ - the product name
+ - the product price
+ - the quantity of the product in stock
+ ![The products list](/assets/images/products-list-front.png"the products list")
+ 
+## Customers
+In this section, the user can view the list of customers that exist:
+ - the customer full name
+ - the customer email
+![The customers list](/assets/images/customers-list-front.png"the customers list")
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+### Account Details
+From the list of customers, the user can view the account details of each customer, by clicking on the "Account details" button.
+![The cutomer details](/assets/images/customer-details.png"the customer details")
 
-## Development server
+### Bills
+The user can also view the list of bills of each customers by clicking on the "Bills" button.
+![The customer bills](/assets/images/customer-bills.png"the customer bills")
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-"# Ecommerce micreoservices application FRONTEND" 
+### Bills Details
+The user can also view the bill details, meaning the list of products purchased, their quantity and price, by clicking on the "bill details" button.
+![The bill details](/assets/images/bill-details.png"the bill details")
