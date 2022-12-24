@@ -12,7 +12,7 @@ export class CustomersService {
   constructor(private http:HttpClient,private router:Router) { }
 
   onGetCustomers(){
-   return this.http.get<Array<Customer>>("http://localhost:8083/CUSTOMER-SERVICE/customers");
+   return this.http.get<Array<Customer>>("http://localhost:8888/CUSTOMER-SERVICE/customers");
   }
   onGetAccountDetails(c: any) {
     this.router.navigateByUrl("/customers/"+c.id)

@@ -20,7 +20,7 @@ export class BillDetailsComponent implements OnInit {
 this.getBillDetails()
   }
   getBillDetails(){
-    this.http.get("http://localhost:8083/BILLING-SERVICE/bills/"+this.billId+"/productItems").subscribe({
+    this.http.get("http://localhost:8888/BILLING-SERVICE/bills/"+this.billId+"/productItems").subscribe({
       next:(data)=>{this.billdetails=data},
       error:(err)=>{
         console.log(err);

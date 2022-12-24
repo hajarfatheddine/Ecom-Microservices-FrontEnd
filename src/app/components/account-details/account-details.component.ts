@@ -19,7 +19,7 @@ export class AccountDetailsComponent implements OnInit {
     this.getDetails();
   }
   getDetails(){
-    this.http.get("http://localhost:8083/CUSTOMER-SERVICE/customers/"+this.customerId).subscribe({
+    this.http.get("http://localhost:8888/CUSTOMER-SERVICE/customers/"+this.customerId).subscribe({
       next:(data)=>{this.customer=data},
       error:(err)=>{
         console.log(err);
