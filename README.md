@@ -10,7 +10,7 @@ In this section, the user can view the list of products that exist:
 In this section, the user can view the list of customers that exist:
  - the customer full name
  - the customer email
-![The customers list](src/assets/images/customers-list-front.png"the customers list")
+ <img alt="The customers list" src="src/assets/images/customers-list-front.png&quot;the customers list&quot;"/>
 
 ### Account Details
 From the list of customers, the user can view the account details of each customer, by clicking on the "Account details" button.
