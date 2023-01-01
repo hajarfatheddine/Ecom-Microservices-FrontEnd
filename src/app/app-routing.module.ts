@@ -5,13 +5,16 @@ import {CustomersComponent} from "./components/customers/customers.component";
 import {AccountDetailsComponent} from "./components/account-details/account-details.component";
 import {BillsComponent} from "./components/bills/bills.component";
 import {BillDetailsComponent} from "./components/bill-details/bill-details.component";
+import {AuthGuard} from "./guards/security.guard";
 
 
 const routes: Routes = [
   {path: "products", component: ProductsComponent},
   {path: "customers", component:CustomersComponent},
-  {path: "customers/:customerId", component:AccountDetailsComponent},
-  {path: "customerBills/:customerId", component:BillsComponent},
+  {path: "customers/:customerId", component:AccountDetailsComponent,
+    canActivate:[AuthGuard],data:{roles:['ADMIN']}},
+  {path: "customerBills/:customerId", component:BillsComponent,
+    canActivate:[AuthGuard],data:{roles:['ADMIN']}},
   {path: "bills/:id", component:BillDetailsComponent},
 
 
